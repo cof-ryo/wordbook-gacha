@@ -45,10 +45,12 @@ Things you may want to cover:
 |score|integer||
 |rare_id|integer|null:false,foreign_key: true|
 |user_id|integer|null:false,foreign_key: true|
+|deck_id|integer|null:false,foreign_key: true|
 
 ### Association
 - belong_to :user
 - belong_to :rare
+- belong_to :deck
 
 
 ## rareテーブル
@@ -57,6 +59,15 @@ Things you may want to cover:
 |rare|string|null:false,unique:true|
 |rate|string|null:false,unique:true|
 |word_quantity|integer||
+
+### Association
+- has_many :words
+
+
+## deckテーブル
+|Colum|Type|Option|
+|-----|----|------|
+|name|string||
 
 ### Association
 - has_many :words
