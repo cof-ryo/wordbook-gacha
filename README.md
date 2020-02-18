@@ -35,7 +35,7 @@ Things you may want to cover:
 |password|string|null:false|
 
 ### Association
--has_many :words
+- has_many :words
 
 
 ## wordsテーブル
@@ -47,8 +47,8 @@ Things you may want to cover:
 |user_id|integer|null:false,foreign_key: true|
 
 ### Association
--belong_to :user
--belong_to :rare
+- belong_to :user
+- belong_to :rare
 
 
 ## rareテーブル
@@ -59,4 +59,4 @@ Things you may want to cover:
 |word_quantity|integer||
 
 ### Association
--has_many :words
+- has_many :words
