@@ -51,7 +51,7 @@ Things you may want to cover:
 -belong_to :rare
 
 
-##　rareテーブル
+## rareテーブル
 |Colum|Type|Option|
 |-----|----|------|
 |rare|string|null:false,unique:true|
