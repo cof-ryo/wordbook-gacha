@@ -41,3 +41,27 @@
   }
 }
 
+.side_bar{
+  height: calc(100vh - 150px);
+  width: 220px;
+  overflow: scroll;
+  background-color: saddlebrown;
+  &__name{
+    font-size: 30px;
+    text-align: center;
+    padding: 20px 0 20px 0;
+  }
+  .deck{
+    height: 80px;
+    background-color: skyblue;
+    margin: 10px;
+    padding: 10px;
+    &__name{
+      font-size: 18px;
+    }
+    &__word{
+      font-size: 13px;
+      padding-left: 9px;
+    }
+  }
+}
