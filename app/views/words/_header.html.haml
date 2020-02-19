@@ -1,8 +1,13 @@
 .header
   .title
-    単語帳ガチャ
-  .menu-user_box
-    .menu
+    = link_to "#", class: "title" do
+      単語帳ガチャ
+  .box
+    .box__menu
       メニュー
-    .user
+      = link_to "#", class: "box__menu" do
+        = icon('fas', 'bars')
+    .box__user
       パンダ太郎
+      = link_to "#", class: "box__user" do
+        = icon('fas', 'user-cog')

@@ -1,2 +1,30 @@
 .main
-  main
+  %ul.form
+    %form
+      %li
+        %input.form__word{placeholder: '単語を入力してください'}
+      %li
+        %textarea.form__mean{placeholder: '単語の意味や説明を入力してください'}
+      %li.form__options
+        %select.form__options__deck{name: "デッキ"}
+          %option 中学
+          %option 高校
+        %input.form__options__submit{type: "submit", value: "登録"}
+
+  %table.word{border: 2}
+    %tr
+      %th{width: "100px"} 単語名
+      %th 意味 
+      %th.word__rare{width: "80px"} レア度
+    %tr
+      %td apple
+      %td りんご
+      %td.word__rare N
+    %tr
+      %td this 
+      %td これ
+      %td.word__rare N
+    %tr
+      %td カレントディレクトリ
+      %td いる（今作業中の）ディレクトリのこと。ちなみにホームとルートもある。
+      %td.word__rare N
