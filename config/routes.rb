@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'words/index'
-
+  devise_for :users
   root "words#index"
+  resources :users, only: [:index, :edit, :update]
 end
