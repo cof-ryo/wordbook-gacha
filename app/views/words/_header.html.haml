@@ -1,6 +1,6 @@
 .header
   .title
-    = link_to "#", class: "title" do
+    = link_to root_path, class: "title" do
       単語帳ガチャ
   .box
     .box__menu
@@ -8,6 +8,6 @@
       = link_to "#", class: "box__menu" do
         = icon('fas', 'bars')
     .box__user
-      パンダ太郎
-      = link_to "#", class: "box__user" do
+      = current_user.name
+      = link_to edit_user_path(current_user), class: "box__user" do
         = icon('fas', 'user-cog')
