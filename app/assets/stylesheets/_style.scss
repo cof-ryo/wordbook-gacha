@@ -1,10 +1,6 @@
 // 変数の宣言
 $header-height: 100px;
 
-.wrapper{
-  display: flex;
-}
-
 .header{
   height: $header-height;
   width: 100vw;
@@ -61,7 +57,6 @@ $header-height: 100px;
   }
   .deck{
     height: 80px;
-    // background-color: skyblue;
     margin: 10px;
     padding: 10px;
     &__name{
@@ -76,7 +71,7 @@ $header-height: 100px;
 
 .main{
   height: calc(100vh - #{$header-height});
-  width: calc(100vw - 220px);
+  width: 100vw;
   background-color: #F2F2F2;
   overflow: scroll;
   .form{
@@ -94,17 +89,10 @@ $header-height: 100px;
       margin-top: 10px;
       padding: 0 5px;
     }
-    &__options{
-      display: flex;
-      justify-content: space-between;
+    &__submit{
+      align-items: center;
       padding-top: 10px;
-      &__deck{
-        height: 30px;
-        width: 100px;
-      }
-      &__submit{
-        width: 60px;
-      }
+      width: 60px;
     }
   }
 
