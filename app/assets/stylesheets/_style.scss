@@ -1,0 +1,118 @@
+// 変数の宣言
+$header-height: 100px;
+
+.wrapper{
+  display: flex;
+}
+
+.header{
+  height: $header-height;
+  width: 100vw;
+  background-color: #595959;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  .title{
+    font-family:"Yu Gothic", "游ゴシック", "YuGothic", "游ゴシック体";
+    height: 50px;
+    width: 200px;
+    // background-color: white;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: #0D0D0D;
+  }
+  .box{
+    height: 50px;
+    width: 330px;
+    // background-color: blue;
+    display: flex;
+    justify-content: space-around;
+    line-height: 50px;
+    text-align: center;
+    &__menu{
+      height: 100%;
+      width: 150px;
+      font-size: 20px;
+      text-decoration: none;
+      color: #0D0D0D;
+    }
+    &__user{
+      height: 100%;
+      width: 150px;
+      font-size: 20px;
+      text-decoration: none;
+      color: #0D0D0D;
+    }
+  }
+}
+
+.side_bar{
+  height: calc(100vh - #{$header-height});
+  width: 220px;
+  overflow: scroll;
+  background-color: #8C8C8C;
+  &__name{
+    font-size: 30px;
+    text-align: center;
+    padding: 20px 0 20px 0;
+  }
+  .deck{
+    height: 80px;
+    // background-color: skyblue;
+    margin: 10px;
+    padding: 10px;
+    &__name{
+      font-size: 18px;
+    }
+    &__word{
+      font-size: 13px;
+      padding-left: 9px;
+    }
+  }
+}
+
+.main{
+  height: calc(100vh - #{$header-height});
+  width: calc(100vw - 220px);
+  background-color: #F2F2F2;
+  overflow: scroll;
+  .form{
+    list-style: none;
+    width: 400px;
+    height: 200px;
+    padding: 10px 0 10px 50px;
+    &__word{
+      width: 100%;
+      margin-top: 10px;
+      padding: 0 5px;
+    }
+    &__mean{
+      width: 100%;
+      margin-top: 10px;
+      padding: 0 5px;
+    }
+    &__options{
+      display: flex;
+      justify-content: space-between;
+      padding-top: 10px;
+      &__deck{
+        height: 30px;
+        width: 100px;
+      }
+      &__submit{
+        width: 60px;
+      }
+    }
+  }
+
+  .word{
+   width: 80%;
+   margin: 10px 0 10px 50px;
+   &__rare{
+     text-align: center;
+   }
+  }
+}
