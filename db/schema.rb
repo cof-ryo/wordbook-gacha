@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20200220035806) do
   end
 
   create_table "words", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",       null: false
-    t.string   "mean",       null: false
-    t.integer  "score"
+    t.string   "name",                   null: false
+    t.string   "mean",                   null: false
+    t.integer  "score",      default: 0
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.index ["user_id"], name: "index_words_on_user_id", using: :btree
   end
 
