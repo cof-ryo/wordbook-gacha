@@ -5,21 +5,61 @@ class WordsController < ApplicationController
   def index
     @word = Word.new
     @words = @user.words
-    @random = Word.order("RAND()").limit(10)
   end
-
+  
   def create
     Word.create(word_params)
     redirect_to root_path
   end
 
-  def updata
-    Word.update(word_params_score)
-    redirect_to root_path
+  def edit
+    @word = Word.find(params[:id])
   end
 
-  def random
-    @random = Word.order("RAND()").limit(10)
+  def update
+    @word = Word.find(params[:id])
+    if @word.update(word_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @word = Word.find(params[:id])
+    if @word.destroy
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def gacha
+  end
+
+  def random3
+    @randoms = Word.order("RAND()").limit(3)
+    @random = Word.new
+    if params[:submit]
+      @random.score += 1
+    elsif params[:btn2]
+      @random.score -= 1
+    end
+  end
+
+  def random5
+    @randoms = Word.order("RAND()").limit(5)
+    @random = Word.new
+  end
+
+  def random10
+    @randoms = Word.order("RAND()").limit(10)
+    @random = Word.new
+    if params[:btn1]
+      @random.score += 1
+    elsif params[:btn2]
+      @random.score -= 1
+    end
   end
 
   private

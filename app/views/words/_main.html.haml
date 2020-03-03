@@ -8,14 +8,15 @@
       = f.submit '登録', class: 'form__submit'
 
   %table.word{border: 2}
-    %tr
+    %tr.word__title
       %th{width: "130px"} 単語名
       %th 意味 
       %th.word__rare{width: "80px"} レア度
     - @words.each do |word|
       %tr
         %td 
-          = word.name
+          =link_to "/users/#{@user.id}/words/#{word.id}/edit", class: "word__name" do
+            = word.name
         %td 
           = word.mean
         %td.word__rare  
@@ -29,3 +30,4 @@
             SSR
           - else
             LG
+        
