@@ -4,6 +4,7 @@ class CreateWords < ActiveRecord::Migration[5.0]
       t.string :name, null: false
       t.string :mean, null: false
       t.integer :score, default: '0'
+      t.integer :succeed ,default: '0'
       t.references :user, foreign_key: true
       t.timestamps
     end

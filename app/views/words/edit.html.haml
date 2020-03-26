@@ -2,11 +2,11 @@
   = render "header"
 
 .main
-  = form_for [@user, @word] do |f|
+  = form_for [@word] do |f|
     %ul.form
       %li
         = f.text_field :name, class: 'form__word', placeholder: '単語を入力してください'
       %li
         = f.text_area :mean, class: 'form__mean', placeholder: '単語の意味や説明を入力してください'
       = f.submit '編集', class: 'form__submit'
-      = link_to '削除', "/users/#{@user.id}/words/#{@word.id}" , method: :delete , data: { confirm: 'Are you sure?' }, class: "form__delete"
+      = link_to '削除', "/words/#{@word.id}" , method: :delete , data: { confirm: 'Are you sure?' }, class: "form__delete"

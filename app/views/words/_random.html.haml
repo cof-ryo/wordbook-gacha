@@ -1,35 +1,38 @@
 .main
-  %table.word{border: 2}
-    %tr.word__title
-      %th{width: "130px"} 単語名
-      %th 意味 
-      %th.word__rare{width: "80px"} レア度
-      %th{width: "85px"} 自己評価
-    - @randoms.each_with_index do |word, index|
-      %tr.random
-        %td.random__name
-          = word.name
-        %td
-          .random__mean{id: "btn#{index}"}
-            .random__mean--hide{id: "mean#{index}"}
-              = word.mean
-            = button_tag '答え'
-        %td.word__rare  
-          - if word.score <= 1
-            N 
-
-          - elsif 1 < word.score && 4 >= word.score 
-            R
-          - elsif 4 < word.score && 8 >= word.score
-            SR 
-          - elsif 8 < word.score && 10 >= word.score
-            SSR
-          - else
-            LG
-        %td
-          = form_for [@user, @random] do |e|     
-            = e.submit 'できた！', class: 'form__submit', name: "btn1"
-            = e.submit '...。', class: 'form__submit', name:"btn2"
+  = form_for @random do |e|
+    %table.word{border: 2}
+      %tr.word__title
+        %th{width: "130px"} 単語名
+        %th 意味 
+        %th.word__rare{width: "80px"} レア度
+        %th{width: "85px"} 自己評価
+      - @randoms.each_with_index do |word, index|
+        %tr.random
+          %td.random__name
+            = word.name
+          %td
+            .random__mean{id: "btn#{index}"}
+              .random__mean--hide{id: "mean#{index}"}
+                = word.mean
+              = button_tag '答え'
+          %td.word__rare  
+            - if word.score <= 1
+              N 
+            - elsif 1 < word.score && 4 >= word.score 
+              R
+            - elsif 4 < word.score && 8 >= word.score
+              SR 
+            - elsif 8 < word.score && 10 >= word.score
+              SSR
+            - else
+              LG
+          %td     
+            できた！！ 
+            = e.radio_button :succeed, 1
+            %br
+            いまいち。
+            = e.radio_button :succeed, 0
+    = e.submit "解答する",class: "t_bottun_form__display"
   
   
 -#         %form{name: "btn"}

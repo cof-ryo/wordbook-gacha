@@ -18,7 +18,10 @@ class WordsController < ApplicationController
 
   def update
     @word = Word.find(params[:id])
+    @words = Word.where(user_id: params[:id])
     if @word.update(word_params)
+      redirect_to root_path
+    elsif @words.update(word_params)
       redirect_to root_path
     else
       render :edit
@@ -38,28 +41,18 @@ class WordsController < ApplicationController
   end
 
   def random3
-    @randoms = Word.order("RAND()").limit(3)
+    @randoms = Word.where(user_id: params[:id]).order("RAND()").limit(3)
     @random = Word.new
-    if params[:submit]
-      @random.score += 1
-    elsif params[:btn2]
-      @random.score -= 1
-    end
   end
 
   def random5
-    @randoms = Word.order("RAND()").limit(5)
+    @randoms = Word.where(user_id: params[:id]).order("RAND()").limit(5)
     @random = Word.new
   end
 
   def random10
-    @randoms = Word.order("RAND()").limit(10)
+    @randoms = Word.where(user_id: params[:id]).order("RAND()").limit(10)
     @random = Word.new
-    if params[:btn1]
-      @random.score += 1
-    elsif params[:btn2]
-      @random.score -= 1
-    end
   end
 
   private
@@ -69,7 +62,7 @@ class WordsController < ApplicationController
   end
 
   def word_params
-    params.require(:word).permit(:name, :mean, :score).merge(user_id: current_user.id)
+    params.require(:word).permit(:name, :mean, :score, :succeed).merge(user_id: current_user.id)
   end
 
   def word_params_score

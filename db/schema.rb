@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20200220035806) do
     t.string   "name",                   null: false
     t.string   "mean",                   null: false
     t.integer  "score",      default: 0
+    t.integer  "succeed",    default: 0
     t.integer  "user_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
