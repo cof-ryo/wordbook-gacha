@@ -11,7 +11,7 @@
     %tr.word__title
       %th{width: "130px"} 単語名
       %th 意味 
-      %th.word__rare{width: "80px"} レア度
+      -# %th.word__rare{width: "80px"} レア度
     - @words.each do |word|
       %tr
         %td 
@@ -19,15 +19,15 @@
             = word.name
         %td 
           = word.mean
-        %td.word__rare  
-          - if word.score <= 1
-            N 
-          - elsif 1 < word.score && 4 >= word.score 
-            R
-          - elsif 4 < word.score && 8 >= word.score
-            SR 
-          - elsif 8 < word.score && 10 >= word.score
-            SSR
-          - else
-            LG
+        -# %td.word__rare  
+        -#   - if word.score <= 1
+        -#     N 
+        -#   - elsif 1 < word.score && 4 >= word.score 
+        -#     R
+        -#   - elsif 4 < word.score && 8 >= word.score
+        -#     SR 
+        -#   - elsif 8 < word.score && 10 >= word.score
+        -#     SSR
+        -#   - else
+        -#     LG
         
