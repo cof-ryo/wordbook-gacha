@@ -1,0 +1,15 @@
+.wrapper
+  = render "header"
+
+.main
+  .gacha
+    %ul
+      %li.gacha__list
+        = link_to "３回引く", random3_word_path(current_user.id), class:"gacha__list__link3"
+      %li.gacha__list
+        = link_to "５回引く", random5_word_path(current_user.id), class:"gacha__list__link5"
+      %li.gacha__list
+        = link_to "10回引く", random10_word_path(current_user.id), class:"gacha__list__link10"
+  
+
+ 

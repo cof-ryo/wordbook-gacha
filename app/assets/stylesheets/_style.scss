@@ -1,7 +1,9 @@
 // 変数の宣言
 $header-height: 80px;
 
+//ヘッダー
 .header{
+  overflow: scroll;
   height: $header-height;
   width: 100vw;
   background-color: #595959;
@@ -9,6 +11,7 @@ $header-height: 80px;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  //ヘッダー左のタイトル部分
   .title{
     font-family:"Yu Gothic", "游ゴシック", "YuGothic", "游ゴシック体";
     height: 50px;
@@ -19,6 +22,7 @@ $header-height: 80px;
     text-decoration: none;
     color: #0D0D0D;
   }
+  //ヘッダー右側のメニューフォーム
   .menu{
     height: 50px;
     width: 330px;
@@ -34,123 +38,53 @@ $header-height: 80px;
       color: #0D0D0D;
       &__link{
         cursor : zoom-in;
-        background-color: #595959; /* メニュー項目の背景色(濃い赤色) */
-        color: white;              /* メニュー項目の文字色(白色) */
-        line-height: 40px;         /* メニュー項目のリンクの高さ(40px) */
-        text-align: center;        /* メインメニューの文字列の配置(中央寄せ) */
-        text-decoration: none;     /* メニュー項目の装飾(下線を消す) */
-        font-weight: bold;         /* 太字にする */
-        display: block;            /* ★項目内全域をリンク可能にする */
+        background-color: #595959; 
+        color: white;              
+        line-height: 40px;         
+        text-align: center;        
+        text-decoration: none;     
+        font-weight: bold;         
+        display: block;            
       }
-      &__link:hover{
-        background-color: #595959; /* メニュー項目にマウスが載ったときの背景色(淡いピンク) */
-        color: #dd0000;            /* メニュー項目にマウスが載ったときの文字色(濃い赤色) */
+      &__link:hover{ //カーソルを合わせた時に色を変更する
+        background-color: #595959; 
+        color: #dd0000;            
       }
       &__sub{
         background-color: #CCCCCC;
-        margin: 0px;        /* ★サブメニュー外側の余白(ゼロ) */
-        padding: 0px;       /* ★サブメニュー内側の余白(ゼロ) */
-        position: absolute; /* ★絶対配置にする */
-        display: none;      /* ★標準では非表示にする */
+        margin: 0px;        
+        padding: 0px;       
+        position: absolute; 
+        display: none;      
         &__list{
-          width: 135px;               /* サブメニュー1項目の横幅(135px) */
+          width: 135px;     
           &__link{
-            border-top: 1px solid #D5EDD9; /* 項目上側の枠線(ピンク色で1pxの実線) */
+            border-top: 1px solid #D5EDD9;
             display: block;
             color: white;
             text-decoration: none;
-            line-height: 35px;   /* サブメニュー1項目の高さ(35px) */
-            text-align: left;    /* 文字列の配置(左寄せ) */
-            padding-left: 5px;   /* 文字列前方の余白(5px) */
-            font-weight: normal; /* 太字にはしない */
+            line-height: 35px;   
+            text-align: left;    
+            padding-left: 5px;   
+            font-weight: normal; 
           }
-          &__link:hover{
-            background-color: #ffff80; /* サブメニュー項目にマウスが載ったときの背景色(淡い黄色) */
-            color: #005500;            /* サブメニュー項目にマウスが載ったときの文字色(濃い緑色) */
+          &__link:hover{  //カーソルを合わせた時に色を変更する
+            background-color: #ffff80; 
+            color: #005500;            
           }
         }
       }
     }
   }
 }
-// .header-menu {
-//   margin: 0px;               /* メニューバー外側の余白(ゼロ) */
-//   padding: 0px 0px 0px 15px; /* メニューバー内側の余白(左に15px) */
-//   background-color: #cc0000; /* バーの背景色(濃い赤色) */
-//   &__main{
-//     width: 125px;          /* メニュー項目の横幅(125px) */
-//     display: inline-block; /* ★横並びに配置する */
-//     list-style-type: none; /* ★リストの先頭記号を消す */
-//     position: relative;    /* ★サブメニュー表示の基準位置にする */
-//     &__link{
-//       background-color: #cc0000; /* メニュー項目の背景色(濃い赤色) */
-//       color: white;              /* メニュー項目の文字色(白色) */
-//       line-height: 40px;         /* メニュー項目のリンクの高さ(40px) */
-//       text-align: center;        /* メインメニューの文字列の配置(中央寄せ) */
-//       text-decoration: none;     /* メニュー項目の装飾(下線を消す) */
-//       font-weight: bold;         /* 太字にする */
-//       display: block;            /* ★項目内全域をリンク可能にする */
-//     }
-//     &__link:hover{
-//       background-color: #ffdddd; /* メニュー項目にマウスが載ったときの背景色(淡いピンク) */
-//       color: #dd0000;            /* メニュー項目にマウスが載ったときの文字色(濃い赤色) */
-//     }
-//     &__sub{
-//       background-color: #cc0000;
-//       margin: 0px;        /* ★サブメニュー外側の余白(ゼロ) */
-//       padding: 0px;       /* ★サブメニュー内側の余白(ゼロ) */
-//       position: absolute; /* ★絶対配置にする */
-//       display: none;      /* ★標準では非表示にする */
-//       &__list{
-//         width: 135px;               /* サブメニュー1項目の横幅(135px) */
-//         &__link{
-//           border-top: 1px solid pink; /* 項目上側の枠線(ピンク色で1pxの実線) */
-//           display: block;
-//           color: white;
-//           text-decoration: none;
-//           line-height: 35px;   /* サブメニュー1項目の高さ(35px) */
-//           text-align: left;    /* 文字列の配置(左寄せ) */
-//           padding-left: 5px;   /* 文字列前方の余白(5px) */
-//           font-weight: normal; /* 太字にはしない */
-//         }
-//         &__link:hover{
-//           background-color: #ffff80; /* サブメニュー項目にマウスが載ったときの背景色(淡い黄色) */
-//           color: #005500;            /* サブメニュー項目にマウスが載ったときの文字色(濃い緑色) */
-//         }
-//       }
-//     }
-//   }
-// }
 
-.side_bar{
-  height: calc(100vh - #{$header-height});
-  width: 220px;
-  overflow: scroll;
-  background-color: #8C8C8C;
-  &__name{
-    font-size: 30px;
-    text-align: center;
-    padding: 20px 0 20px 0;
-  }
-  .deck{
-    height: 80px;
-    margin: 10px;
-    padding: 10px;
-    &__name{
-      font-size: 18px;
-    }
-    &__word{
-      font-size: 13px;
-      padding-left: 9px;
-    }
-  }
-}
-
+//メインのビュー部分
 .main{
   height: calc(100vh - #{$header-height});
   width: 100vw;
   background-color: #F2F2F2;
   overflow: scroll;
+  //単語登録フォーム
   .form{
     list-style: none;
     width: 400px;
@@ -171,14 +105,103 @@ $header-height: 80px;
       padding-top: 10px;
       width: 60px;
     }
+    &__delete{
+      float: right;
+      color: red;
+    }
   }
-
+  //単語一覧
   .word{
-   width: 80%;
-   margin: 10px 0 10px 50px;
-   &__rare{
-     text-align: center;
-   }
+    width: 80%;
+    margin: 10px 0 10px 50px;
+    &__title{
+      border-bottom: solid 2px;
+      font-size: large;
+    }
+    &__name{
+      text-decoration: none;
+      color: black;
+    }
+    &__rare{
+      text-align: center;
+    }
+  }
+  //ガチャ画面
+  .gacha{
+    font-size: 500%;
+    text-align: center;
+    height: calc(100% - 40px);
+    &__list{
+      padding-top:20px ;
+      height: 180px;
+      &__link3{
+        text-decoration: none;
+        color: #677575;
+        border: solid 2px;
+        padding: 15px 10px;
+        border-radius: 10px;
+      }
+      &__link3:hover{ //カーソルを合わせた時に色を変更する
+        background-color: #D8F5F5;  
+      }
+      &__link5{
+        text-decoration: none;
+        color: #677575;
+        border: solid 2px;
+        padding: 15px 10px;
+        border-radius: 10px;
+      }
+      &__link5:hover{ //カーソルを合わせた時に色を変更する
+        background-color: #D8F5F5;
+      }
+      &__link10{
+        text-decoration: none;
+        color: #677575;
+        border: solid 2px;
+        padding: 15px 10px;
+        border-radius: 10px;
+      }
+      &__link10:hover{ //カーソルを合わせた時に色を変更する
+        background-color: #D8F5F5;
+      }
+    }
+  }
+  //ランダム問題画面
+  .random{
+    &__name{
+      font-size: large;
+      color: lightcoral;
+    }
+    &__mean--hide{
+      display: none;
+    }
   }
 }
 
+
+
+
+
+// .side_bar{
+//   height: calc(100vh - #{$header-height});
+//   width: 220px;
+//   overflow: scroll;
+//   background-color: #8C8C8C;
+//   &__name{
+//     font-size: 30px;
+//     text-align: center;
+//     padding: 20px 0 20px 0;
+//   }
+//   .deck{
+//     height: 80px;
+//     margin: 10px;
+//     padding: 10px;
+//     &__name{
+//       font-size: 18px;
+//     }
+//     &__word{
+//       font-size: 13px;
+//       padding-left: 9px;
+//     }
+//   }
+// }

@@ -11,7 +11,7 @@
         %li.menu__main__sub__list
           = link_to "単語一覧", root_path, class: "menu__main__sub__list__link"
         %li.menu__main__sub__list
-          = link_to "ガチャを引く", random_user_words_path(@user), class: "menu__main__sub__list__link"
+          = link_to "ガチャを引く", gacha_word_path(current_user.id), class: "menu__main__sub__list__link"
     %li.menu__main
       .menu__main__link
         = current_user.name
