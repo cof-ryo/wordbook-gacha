@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   database: wordbook-gacha_production
-  username: wordbook-gacha
-  password: <%= ENV['WORDBOOK-GACHA_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWOR'] %>
   socket: /var/lib/mysql/mysql.sock
