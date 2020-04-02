@@ -3,7 +3,7 @@
     %tr.word__title
       %th{width: "130px"} 単語名
       %th 意味 
-      %th.word__rare{width: "80px"} レア度
+      -# %th.word__rare{width: "80px"} レア度
       -# %th{width: "85px"} 自己評価
     - @randoms.each_with_index do |word, index|
       %tr.random
@@ -14,29 +14,18 @@
             .random__mean--hide{id: "mean#{index}"}
               = word.mean
             = button_tag '答え'
-        %td.word__rare  
-          - if word.score <= 1
-            N 
-          - elsif 1 < word.score && 4 >= word.score 
-            R
-          - elsif 4 < word.score && 8 >= word.score
-            SR 
-          - elsif 8 < word.score && 10 >= word.score
-            SSR
-          - else
-            LG
-  %table.word{border: 2}
-    %tr.word__title
-      %th{width: "85px"} 自己評価     
-    = form_for @random do |f|
-      %tr
-        %td
-          = f.radio_button :succeed, 1
-          できた！！
-          = f.radio_button :succeed, 0
-          いまいち
-          = f.submit '登録', class: 'form__submit'
-
+        -# %td.word__rare  
+        -#   - if word.score <= 1
+        -#     N 
+        -#   - elsif 1 < word.score && 4 >= word.score 
+        -#     R
+        -#   - elsif 4 < word.score && 8 >= word.score
+        -#     SR 
+        -#   - elsif 8 < word.score && 10 >= word.score
+        -#     SSR
+        -#   - else
+        -#     LG
+          -# %td     
     -#         できた！！ 
     -#         = e.radio_button :succeed, 1
     -#         %br

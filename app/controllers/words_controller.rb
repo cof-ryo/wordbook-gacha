@@ -17,22 +17,15 @@ class WordsController < ApplicationController
   end
 
   def update
-
-    if @randoms.update(word_params_score)
-      if @randoms[0].succeed == 1
-        @randoms[0].score += 1
-      end
+    @word = Word.find(params[:id])
+    @words = Word.where(user_id: params[:id])
+    if @word.update(word_params)
       redirect_to root_path
+    elsif @words.update(word_params)
+      redirect_to root_path
+    else
+      render :edit
     end
-    # @word = Word.find(params[:id])
-    # @words = Word.where(user_id: params[:id])
-    # if @word.update(word_params)
-    #   redirect_to root_path
-    # elsif @words.update(word_params)
-    #   redirect_to root_path
-    # else
-    #   render :edit
-    # end
   end
 
   def destroy
@@ -50,8 +43,6 @@ class WordsController < ApplicationController
   def random3
     @randoms = Word.where(user_id: params[:id]).order("RAND()").limit(3)
     @random = Word.new
-    @user = User.find(current_user.id)
-    # binding.pry
   end
 
   def random5
@@ -75,6 +66,6 @@ class WordsController < ApplicationController
   end
 
   def word_params_score
-    params.require(:word).permit(:succeed,:score)
+    params.require(:word).permit(:score)
   end
 end
