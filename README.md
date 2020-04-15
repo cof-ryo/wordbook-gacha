@@ -25,7 +25,7 @@ TeckCampにて勉強をしているときに、楽しく勉強できる単語帳
 ![DEMO](https://user-images.githubusercontent.com/60500667/79393357-24682c80-7fb0-11ea-8523-0b2ca42800c7.gif)</br>
 
 # 工夫したポイント
-ガチャを引いた後に、答えが隠されてあり、ボタンを押すことにより一つ一つ答え合わせをできるようにしているところです。
+ガチャを引いた後に、答えが隠されてあり、ボタンを押すことにより一つ一つ答え合わせをできるようにしているところ
 
 # 開発環境
 ruby 2.5.1p57</br>
@@ -55,21 +55,7 @@ jquery-rails 4.3.5</br>
 |Colum|Type|Option|
 |-----|----|------|
 |name|string||
-|score|integer||
-|rare_id|integer|null:false,foreign_key: true|
 |user_id|integer|null:false,foreign_key: true|
 
 ### Association
 - belong_to :user
-- belong_to :rare
-
-
-## rareテーブル
-|Colum|Type|Option|
-|-----|----|------|
-|rare|string|null:false,unique:true|
-|probability|integer|null:false,unique:true|
-|word_quantity|integer||
-
-### Association
-- has_many :words
