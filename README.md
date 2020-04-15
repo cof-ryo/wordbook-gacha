@@ -5,9 +5,9 @@
 ### **http://18.180.14.244/**  
 
 ## テストアカウント
-アドレス：test1@test.com</br>
-password:aaaa1111</br>
-ユーザー名：テスト１</br>
+<b>アドレス</b>：test1@test.com</br>
+<b>password</b>:aaaa1111</br>
+<b>ユーザー名</b>：テスト１</br>
 
 ## 詳細
 
